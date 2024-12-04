@@ -1,0 +1,93 @@
+networks:
+  multiple-service-network:
+    driver: bridge
+
+
+services:
+  rabbitmq:
+    image: rabbitmq:3
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - multiple-service-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api_service
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - multiple-service-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  filter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: filter_service
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - multiple-service-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  screaming:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: screaming_service
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - multiple-service-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  sending:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: sending_service
+    env_file:
+      - .env
+    depends_on:
+      - rabbitmq
+    networks:
+      - multiple-service-network
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
