@@ -36,7 +36,7 @@ docker compose -f docker-compose-single.yml down
 docker compose -f docker-compose-multiple.yml up --build -d
 ```
 
-### How to launch load test
+## How to launch load test
 
 - Install locally load testing tools (locust)
 ```
