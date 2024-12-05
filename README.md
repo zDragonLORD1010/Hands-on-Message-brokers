@@ -1,6 +1,14 @@
 # Hands-on-Message-brokers
 
-## Team information
+## Table of contents
+
+* [Team Information](#team-information)
+* [Demo](#demo)
+* [Report](#report)
+* [Project Structure](#project-structure)
+* [How To](#how-to)
+
+## Team Information
 
 ### Team 11
 
@@ -23,7 +31,7 @@ TODO
 
 TODO
 
-## How to
+## How To
 
 ### How to launch application
 
