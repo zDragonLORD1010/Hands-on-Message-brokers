@@ -10,7 +10,7 @@
 
 ## How to launch application
 
-### Single service
+### Single services (pipes and filters)
 
 ```
 bash run.sh single
@@ -23,7 +23,7 @@ docker compose -f docker-compose-multiple.yml down
 docker compose -f docker-compose-single.yml up --build -d
 ```
 
-### Multiple service
+### Multiple services (broker)
 
 ```
 bash run.sh multiple
@@ -35,6 +35,11 @@ OR (just content of `run.sh` with `multiple` parameter)
 docker compose -f docker-compose-single.yml down
 docker compose -f docker-compose-multiple.yml up --build -d
 ```
+
+## How to use application
+
+- Open http://localhost:8000/docs
+- Send messages
 
 ## How to launch load test
 
