@@ -23,7 +23,7 @@ class APIProcessor(Processor):
     def run(self):
         uvicorn.run(self.app, host=API_HOST, port=API_PORT)
 
-    def create_new_message(self, message: Message):
+    async def create_new_message(self, message: Message):
         try:
             self.put_output_message(message)
 
