@@ -1,6 +1,17 @@
 # Hands-on-Message-brokers
 
-## Team 11
+## Table of contents
+
+* [Team Information](#team-information)
+* [Demo](#demo)
+* [Report](#report)
+* [Project Structure](#project-structure)
+* [How To](#how-to)
+
+## Team Information
+
+### Team 11
+
 | Full name       | Group     | Email                           |
 |-----------------|-----------|---------------------------------|
 | Azamat Bayramov | B22-SD-03 | a.bayramov@innopolis.university |
@@ -8,9 +19,23 @@
 | Matthew Rusakov | B22-SD-03 | m.rusakov@innopolis.university  |
 | Egor Valikov    | B22-CBS-01| e.valikov@innopolis.university  |
 
-## How to launch application
+## Demo
 
-### Single services (pipes and filters)
+TODO
+
+## Report
+
+TODO
+
+## Project Structure
+
+TODO
+
+## How To
+
+### How to launch application
+
+#### Single services (pipes and filters)
 
 ```
 bash run.sh single
@@ -23,7 +48,7 @@ docker compose -f docker-compose-multiple.yml down
 docker compose -f docker-compose-single.yml up --build -d
 ```
 
-### Multiple services (broker)
+#### Multiple services (broker)
 
 ```
 bash run.sh multiple
@@ -36,12 +61,12 @@ docker compose -f docker-compose-single.yml down
 docker compose -f docker-compose-multiple.yml up --build -d
 ```
 
-## How to use application
+### How to use application
 
 - Open http://localhost:8000/docs
 - Send messages
 
-## How to launch load test
+### How to launch load test
 
 - Install locally load testing tools (locust)
 ```
